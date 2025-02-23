@@ -3,8 +3,8 @@ package pe.idat.edu.app_cloud_client_pagos_ec.controllers;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import pe.idat.edu.app_cloud_client_pagos_ec.service.servicePago;
 
 @RestController
 public class cloudController {
@@ -16,4 +16,8 @@ public class cloudController {
     public String verMensajeCloud() {
         return mensaje;
     }
+    @GetMapping("/realizar-pago/{idPedido}")
+    public String procesarPago(@PathVariable Long idPedido) {
+        return "Pago realizado de: " +idPedido;
+}
 }
